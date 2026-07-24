@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_shared_social_links",
+  "info": {
+    "displayName": "Enlace Social",
+    "icon": "share-2",
+    "description": "Enlace a redes sociales con plataforma y URL."
+  },
+  "options": {},
+  "attributes": {
+    "plataforma": {
+      "type": "enumeration",
+      "enum": [
+        "facebook",
+        "instagram",
+        "tiktok",
+        "x",
+        "youtube",
+        "web"
+      ],
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

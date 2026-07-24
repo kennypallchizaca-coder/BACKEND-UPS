@@ -1,0 +1,76 @@
+{
+  "kind": "collectionType",
+  "collectionName": "leads",
+  "info": {
+    "singularName": "lead",
+    "pluralName": "leads",
+    "displayName": "1. Solicitudes de Interesados (Leads)",
+    "description": "Formularios de interesados recibidos para Admisiones."
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "apellido": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "telefono": {
+      "type": "string",
+      "required": true
+    },
+    "programaInteres": {
+      "type": "string",
+      "required": true
+    },
+    "mensaje": {
+      "type": "text"
+    },
+    "institucion": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    },
+    "estado": {
+      "type": "enumeration",
+      "enum": [
+        "Nuevo",
+        "Confirmación enviada",
+        "En revisión",
+        "Respuesta enviada",
+        "Cerrado"
+      ],
+      "default": "Nuevo"
+    },
+    "asuntoRespuesta": {
+      "type": "string"
+    },
+    "mensajeRespuesta": {
+      "type": "text"
+    },
+    "archivosRespuesta": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "enviarRespuestaPersonalizada": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

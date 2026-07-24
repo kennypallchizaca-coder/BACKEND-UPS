@@ -1,0 +1,77 @@
+{
+  "kind": "collectionType",
+  "collectionName": "asu_groups",
+  "info": {
+    "singularName": "asu-group",
+    "pluralName": "asu-groups",
+    "displayName": "Grupo ASU",
+    "description": "Administra los grupos ASU de la landing."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "descripcion": {
+      "type": "richtext"
+    },
+    "imagen": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "icono": {
+      "type": "enumeration",
+      "enum": [
+        "users",
+        "music",
+        "heart",
+        "palette",
+        "trophy",
+        "coffee",
+        "mic",
+        "star",
+        "terminal",
+        "code",
+        "book",
+        "cpu",
+        "briefcase"
+      ],
+      "default": "users"
+    },
+    "texto_boton": {
+      "type": "string"
+    },
+    "enlace_boton": {
+      "type": "string"
+    },
+    "orden": {
+      "type": "integer"
+    },
+    "facebook_url": {
+      "type": "string"
+    },
+    "instagram_url": {
+      "type": "string"
+    },
+    "tiktok_url": {
+      "type": "string"
+    },
+    "x_url": {
+      "type": "string"
+    },
+    "youtube_url": {
+      "type": "string"
+    },
+    "activo": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

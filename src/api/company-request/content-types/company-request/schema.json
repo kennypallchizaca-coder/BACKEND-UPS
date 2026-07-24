@@ -1,0 +1,69 @@
+{
+  "kind": "collectionType",
+  "collectionName": "company_requests",
+  "info": {
+    "singularName": "company-request",
+    "pluralName": "company-requests",
+    "displayName": "3. Solicitudes de Empresa (Leads)",
+    "description": "Datos enviados desde el formulario Trabaja con nosotros."
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "empresa": {
+      "type": "string",
+      "required": true
+    },
+    "contacto": {
+      "type": "string",
+      "required": true
+    },
+    "correo": {
+      "type": "email",
+      "required": true
+    },
+    "telefono": {
+      "type": "string"
+    },
+    "mensaje": {
+      "type": "richtext"
+    },
+    "tipo_colaboracion": {
+      "type": "enumeration",
+      "enum": [
+        "Pasantías",
+        "Prácticas profesionales"
+      ]
+    },
+    "estado": {
+      "type": "enumeration",
+      "enum": [
+        "Nueva",
+        "Revisada",
+        "Contactada",
+        "En proceso",
+        "Cerrada",
+        "Descartada"
+      ],
+      "default": "Nueva"
+    },
+    "asuntoRespuesta": {
+      "type": "string"
+    },
+    "mensajeRespuesta": {
+      "type": "text"
+    },
+    "archivosRespuesta": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "enviarRespuestaPersonalizada": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

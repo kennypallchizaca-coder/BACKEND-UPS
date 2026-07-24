@@ -1,0 +1,50 @@
+{
+  "kind": "singleType",
+  "collectionName": "landing_contents",
+  "info": {
+    "singularName": "landing-content",
+    "pluralName": "landing-contents",
+    "displayName": "Contenido de landing",
+    "description": "Administra el contenido dinámico de la landing mediante componentes modulares."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seccion_vive_carrera": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.section"
+    },
+    "seccion_grupos_investigacion": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.section"
+    },
+    "seccion_grupos_asu": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.section"
+    },
+    "seccion_alianzas": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.section"
+    },
+    "seccion_empresas": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.section"
+    },
+    "seccion_casos_exito": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.section"
+    },
+    "activo": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

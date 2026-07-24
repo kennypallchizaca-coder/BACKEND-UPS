@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "email_logs",
+  "info": {
+    "singularName": "email-log",
+    "pluralName": "email-logs",
+    "displayName": "Log de correo",
+    "description": "Registro de todos los correos enviados por el sistema."
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "destinatario": {
+      "type": "email",
+      "required": true
+    },
+    "cc": {
+      "type": "string"
+    },
+    "asunto": {
+      "type": "string"
+    },
+    "tipo": {
+      "type": "enumeration",
+      "enum": [
+        "Interesado",
+        "Empresa",
+        "Administración",
+        "Confirmación"
+      ]
+    },
+    "estado": {
+      "type": "enumeration",
+      "enum": [
+        "Pendiente",
+        "Aprobado",
+        "Enviado",
+        "Rechazado",
+        "Fallido"
+      ],
+      "default": "Pendiente"
+    },
+    "cuerpo_html": {
+      "type": "richtext"
+    },
+    "cuerpo_texto": {
+      "type": "text"
+    },
+    "mensaje_error": {
+      "type": "text"
+    },
+    "fecha_envio": {
+      "type": "datetime"
+    },
+    "referencia_modelo": {
+      "type": "string"
+    },
+    "referencia_id": {
+      "type": "string"
+    }
+  }
+}

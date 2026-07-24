@@ -1,0 +1,91 @@
+{
+  "kind": "collectionType",
+  "collectionName": "success_cases",
+  "info": {
+    "singularName": "success-case",
+    "pluralName": "success-cases",
+    "displayName": "Caso de éxito",
+    "description": "Administra casos de éxito de estudiantes, graduados y proyectos destacados."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "categoria": {
+      "type": "string"
+    },
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "nombre": {
+      "type": "string"
+    },
+    "cargo": {
+      "type": "string"
+    },
+    "empresa": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "richtext",
+      "required": true
+    },
+    "imagen": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "icono": {
+      "type": "enumeration",
+      "enum": [
+        "trophy",
+        "star",
+        "briefcase",
+        "graduation-cap",
+        "rocket",
+        "award",
+        "target",
+        "building",
+        "code",
+        "cpu",
+        "users"
+      ],
+      "default": "trophy"
+    },
+    "texto_boton": {
+      "type": "string"
+    },
+    "enlace_boton": {
+      "type": "string"
+    },
+    "orden": {
+      "type": "integer"
+    },
+    "facebook_url": {
+      "type": "string"
+    },
+    "instagram_url": {
+      "type": "string"
+    },
+    "tiktok_url": {
+      "type": "string"
+    },
+    "x_url": {
+      "type": "string"
+    },
+    "youtube_url": {
+      "type": "string"
+    },
+    "web_url": {
+      "type": "string"
+    },
+    "activo": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

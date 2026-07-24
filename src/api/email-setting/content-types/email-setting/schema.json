@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "email_settings",
+  "info": {
+    "singularName": "email-setting",
+    "pluralName": "email-settings",
+    "displayName": "Configuración de Correos - Interesados (Lead)",
+    "description": "Configura los parámetros globales para el sistema de correos de Admisiones."
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre_del_sistema_que_envia": {
+      "type": "string"
+    },
+    "correo_para_recibir_respuestas": {
+      "type": "email"
+    },
+    "correo_del_administrador_para_alertas": {
+      "type": "email",
+      "required": true
+    },
+    "correo_del_administrador_copia": {
+      "type": "email"
+    },
+    "encender_alertas_automaticas_interesados": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

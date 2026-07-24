@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "companies",
+  "info": {
+    "singularName": "company",
+    "pluralName": "companies",
+    "displayName": "Empresa",
+    "description": "Administra las empresas y vinculación."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "icono": {
+      "type": "enumeration",
+      "enum": [
+        "building",
+        "briefcase",
+        "factory",
+        "globe",
+        "landmark",
+        "monitor",
+        "truck",
+        "shopping-cart",
+        "hospital",
+        "graduation-cap"
+      ],
+      "default": "building"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "texto_boton": {
+      "type": "string"
+    },
+    "enlace_boton": {
+      "type": "string"
+    },
+    "orden": {
+      "type": "integer"
+    },
+    "activo": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

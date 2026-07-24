@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "company_email_templates",
+  "info": {
+    "singularName": "company-email-template",
+    "pluralName": "company-email-templates",
+    "displayName": "Plantillas de Correo - Empresas (Lead)",
+    "description": "Plantillas de correo para el flujo de Vinculación y Empresas."
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "code": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "subject": {
+      "type": "string",
+      "required": true
+    },
+    "body": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

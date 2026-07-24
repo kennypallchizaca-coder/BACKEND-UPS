@@ -1,0 +1,82 @@
+name: crm-backend-standalone
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: backend-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${DATABASE_NAME:-strapi}
+      POSTGRES_USER: ${DATABASE_USERNAME:-strapi}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD:-strapi_dev_password}
+    ports:
+      - "${POSTGRES_PORT_HOST:-5432}:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - backend-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DATABASE_USERNAME:-strapi} -d ${DATABASE_NAME:-strapi}"]
+      interval: 10s
+      timeout: 5s
+      start_period: 10s
+      retries: 5
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: backend-strapi
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      HOST: 0.0.0.0
+      PORT: 1337
+      NODE_ENV: ${NODE_ENV:-development}
+      APP_KEYS: ${APP_KEYS:-clave-dev-1==,clave-dev-2==,clave-dev-3==,clave-dev-4==}
+      API_TOKEN_SALT: ${API_TOKEN_SALT:-dev-api-token-salt-placeholder==}
+      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET:-dev-admin-jwt-secret-placeholder==}
+      TRANSFER_TOKEN_SALT: ${TRANSFER_TOKEN_SALT:-dev-transfer-token-salt==}
+      ENCRYPTION_KEY: ${ENCRYPTION_KEY:-dev-encryption-key-placeholder==}
+      JWT_SECRET: ${JWT_SECRET:-dev-jwt-secret-placeholder==}
+      DATABASE_CLIENT: ${DATABASE_CLIENT:-postgres}
+      DATABASE_HOST: ${DATABASE_HOST:-postgres}
+      DATABASE_PORT: ${DATABASE_PORT:-5432}
+      DATABASE_NAME: ${DATABASE_NAME:-strapi}
+      DATABASE_USERNAME: ${DATABASE_USERNAME:-strapi}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD:-strapi_dev_password}
+      DATABASE_SSL: ${DATABASE_SSL:-false}
+      DATABASE_POOL_MIN: 1
+      DATABASE_POOL_MAX: 5
+      SMTP_HOST: ${SMTP_HOST:-smtp.gmail.com}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_USERNAME: ${SMTP_USERNAME:-}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+      EMAIL_DEFAULT_FROM: ${EMAIL_DEFAULT_FROM:-}
+      EMAIL_DEFAULT_REPLY_TO: ${EMAIL_DEFAULT_REPLY_TO:-}
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:3000,http://localhost:5173}
+      STRAPI_TELEMETRY_DISABLED: "true"
+    ports:
+      - "${PORT:-1337}:1337"
+    volumes:
+      - strapi-uploads:/app/public/uploads
+    networks:
+      - backend-network
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:1337/_health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      start_period: 45s
+      retries: 5
+
+volumes:
+  postgres-data:
+    driver: local
+  strapi-uploads:
+    driver: local
+
+networks:
+  backend-network:
+    driver: bridge

@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "activity_logs",
+  "info": {
+    "singularName": "activity-log",
+    "pluralName": "activity-logs",
+    "displayName": "Log de actividad",
+    "description": "Registro de eventos importantes en el sistema."
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "accion": {
+      "type": "string",
+      "required": true
+    },
+    "modulo": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "richtext"
+    },
+    "fecha": {
+      "type": "datetime"
+    },
+    "referencia_modelo": {
+      "type": "string"
+    },
+    "referencia_id": {
+      "type": "string"
+    },
+    "nivel": {
+      "type": "enumeration",
+      "enum": [
+        "Info",
+        "Advertencia",
+        "Error",
+        "Seguridad"
+      ],
+      "default": "Info"
+    }
+  }
+}

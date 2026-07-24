@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "company_email_settings",
+  "info": {
+    "singularName": "company-email-setting",
+    "pluralName": "company-email-settings",
+    "displayName": "Configuración de Correos - Empresas (Lead)",
+    "description": "Configura los parámetros globales para el sistema de correos de Vinculación y Empresas."
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre_del_sistema_que_envia": {
+      "type": "string"
+    },
+    "correo_para_recibir_respuestas": {
+      "type": "email"
+    },
+    "correo_del_responsable_para_alertas": {
+      "type": "email",
+      "required": true
+    },
+    "correo_del_responsable_copia": {
+      "type": "email"
+    },
+    "encender_alertas_automaticas": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

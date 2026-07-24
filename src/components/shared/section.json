@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_sections",
+  "info": {
+    "displayName": "Sección de landing",
+    "icon": "layout",
+    "description": "Estructura base para secciones de la landing page."
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "descripcion": {
+      "type": "richtext"
+    },
+    "activo": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

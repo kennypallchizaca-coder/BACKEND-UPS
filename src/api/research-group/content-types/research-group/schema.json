@@ -1,0 +1,78 @@
+{
+  "kind": "collectionType",
+  "collectionName": "research_groups",
+  "info": {
+    "singularName": "research-group",
+    "pluralName": "research-groups",
+    "displayName": "Grupo de investigación",
+    "description": "Administra la sección de Grupos de Investigación de la landing."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "categoria": {
+      "type": "string"
+    },
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "descripcion": {
+      "type": "richtext"
+    },
+    "imagen": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "icono": {
+      "type": "enumeration",
+      "enum": [
+        "microscope",
+        "network",
+        "database",
+        "cpu",
+        "flask",
+        "terminal",
+        "search",
+        "atom",
+        "server",
+        "zap",
+        "activity"
+      ],
+      "default": "microscope"
+    },
+    "texto_boton": {
+      "type": "string"
+    },
+    "enlace_boton": {
+      "type": "string"
+    },
+    "orden": {
+      "type": "integer"
+    },
+    "facebook_url": {
+      "type": "string"
+    },
+    "instagram_url": {
+      "type": "string"
+    },
+    "tiktok_url": {
+      "type": "string"
+    },
+    "x_url": {
+      "type": "string"
+    },
+    "youtube_url": {
+      "type": "string"
+    },
+    "activo": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

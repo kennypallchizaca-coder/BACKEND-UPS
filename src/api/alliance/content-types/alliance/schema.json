@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "alliances",
+  "info": {
+    "singularName": "alliance",
+    "pluralName": "alliances",
+    "displayName": "Alianza académica",
+    "description": "Administra las alianzas académicas."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "texto_boton": {
+      "type": "string"
+    },
+    "enlace_boton": {
+      "type": "string"
+    },
+    "orden": {
+      "type": "integer"
+    },
+    "activo": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}
